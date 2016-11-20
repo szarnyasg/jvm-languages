@@ -1,6 +1,36 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.0"
+  }
+}
+
+plugins {
+  id "org.xtext.xtend" version "1.0.0"
+}
+apply plugin: "kotlin"
+
+repositories {
+  jcenter()
+}
+
 allprojects {
   group = 'jvm-languages'
   version = '0.0.1-SNAPSHOT'
+}
+
+ext {
+  junitVersion = '4.12'
+  groovyVersion = '2.4.7'
+  kotlinVersion = '1.0.3'
+  scalaVersion = '2.11.8'
+  xtendVersion = '2.10.0'
+}
+
+dependencies {
+  compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
 }
 
 subprojects {
@@ -16,13 +46,55 @@ subprojects {
   repositories {
     jcenter()
   }
-
+  buildscript {
+    repositories {
+      jcenter()
+    }
+  }
 }
 
-ext {
-  junitVersion = '4.12'
-  groovyVersion = '2.4.7'
-  kotlinVersion = '1.0.3'
-  scalaVersion = '2.11.8'
-  xtendVersion = '2.10.0'
+configure(subprojects.findAll {it.name.endsWith("-groovy")}) {
+  apply plugin: "groovy"
+
+  dependencies {
+    compile project(':jvm-hello-world')
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+  }
+}
+
+configure(subprojects.findAll {it.name.endsWith("-java")}) {
+}
+
+configure(subprojects.findAll {it.name.endsWith("-kotlin")}) {
+  buildscript {
+    dependencies {
+      classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+  }
+
+  apply plugin: "kotlin"
+
+  dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  }
+}
+
+configure(subprojects.findAll {it.name.endsWith("-scala")}) {
+  apply plugin: "scala"
+
+  jar {
+    from sourceSets.main.allScala
+  }
+
+  dependencies {
+    compile "org.scala-lang:scala-library:$scalaVersion"
+  }
+}
+
+configure(subprojects.findAll {it.name.endsWith("-xtend")}) {
+  apply plugin: "org.xtext.xtend"
+
+  dependencies {
+    compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
+  }
 }
