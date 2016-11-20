@@ -1,0 +1,28 @@
+allprojects {
+  group = 'jvm-languages'
+  version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+  apply plugin: 'java'
+
+  jar {
+    from sourceSets.main.allJava
+  }
+
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  repositories {
+    jcenter()
+  }
+
+}
+
+ext {
+  junitVersion = '4.12'
+  groovyVersion = '2.4.7'
+  kotlinVersion = '1.0.3'
+  scalaVersion = '2.11.8'
+  xtendVersion = '2.10.0'
+}

@@ -1,0 +1,21 @@
+dependencies {
+  compile project(':jvm-hello-world')
+}
+
+buildscript {
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+dependencies {
+    compile group: 'org.jooq', name: 'jool', version: '0.9.11'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}

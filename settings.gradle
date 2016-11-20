@@ -1,0 +1,9 @@
+rootProject.name = 'jvm-languages'
+
+include ':jvm-base'
+include ':jvm-hello-world'
+//include ':jvm-hello-world-groovy'
+include ':jvm-hello-world-java'
+include ':jvm-hello-world-kotlin'
+//include ':jvm-hello-world-scala'
+include ':jvm-hello-world-xtend'
