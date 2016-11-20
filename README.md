@@ -8,6 +8,8 @@ Small example projects, with multiple implementations in JVM-based languages:
 * [Scala](http://scala-lang.org/)
 * [Xtend](http://xtend-lang.org/)
 
+The project ideas are listed in the [wiki](https://github.com/szarnyasg/jvm-languages/wiki).
+
 ## Resources
 
 * Our comparison of [JVM-based languages](https://github.com/FTSRG/cheat-sheets/wiki/JVM-based-languages)
