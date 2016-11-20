@@ -39,3 +39,8 @@ gen/
 #### IntelliJ IDEA ###
 
 .idea/
+
+### Xtend ###
+xtend-gen/
+
+.cache*

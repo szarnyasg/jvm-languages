@@ -1,6 +1,6 @@
 package hu.bme.mit.jvm.helloworld.xtend;
 
-import hu.bme.mit.jvm.helloworld.HelloWorld;
+import hu.bme.mit.jvm.wordcount.HelloWorld;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
