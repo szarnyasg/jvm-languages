@@ -35,3 +35,7 @@ gen/
 .settings/
 .project
 .classpath
+
+#### IntelliJ IDEA ###
+
+.idea/
