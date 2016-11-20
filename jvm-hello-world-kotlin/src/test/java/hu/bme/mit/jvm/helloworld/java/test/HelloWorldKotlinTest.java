@@ -1,13 +1,12 @@
 package hu.bme.mit.jvm.helloworld.java.test;
 
-import hu.bme.mit.jvm.TestObject;
 import hu.bme.mit.jvm.helloworld.kotlin.HelloWorldKotlin;
 import hu.bme.mit.jvm.helloworld.test.HelloWorldTest;
 
-public class HelloWorldKotlinTest extends HelloWorldTest<TestObject> {
+public class HelloWorldKotlinTest extends HelloWorldTest<HelloWorldKotlin> {
 
 	@Override
-	protected TestObject createTestObject() {
+	protected HelloWorldKotlin createTestObject() {
 		return new HelloWorldKotlin();
 	}
 

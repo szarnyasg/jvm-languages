@@ -1,0 +1,8 @@
+plugins {
+  id "org.xtext.xtend" version "1.0.0"
+}
+
+dependencies {
+  compile project(':jvm-hello-world')
+  compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
+}

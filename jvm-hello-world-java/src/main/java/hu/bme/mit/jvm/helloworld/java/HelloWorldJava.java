@@ -1,8 +1,8 @@
 package hu.bme.mit.jvm.helloworld.java;
 
-import hu.bme.mit.jvm.TestObject;
+import hu.bme.mit.jvm.helloworld.HelloWorld;
 
-public class HelloWorldJava extends TestObject {
+public class HelloWorldJava extends HelloWorld {
 
 	@Override
 	public String getResult() {
