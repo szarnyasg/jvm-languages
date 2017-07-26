@@ -17,7 +17,7 @@ repositories {
 }
 
 allprojects {
-  group = 'jvm-languages'
+  group = 'rosetta-beans'
   version = '0.0.1-SNAPSHOT'
 }
 
@@ -57,7 +57,7 @@ configure(subprojects.findAll {it.name.endsWith("-groovy")}) {
   apply plugin: "groovy"
 
   dependencies {
-    compile project(':jvm-hello-world')
+    compile project(':rb-hello-world')
     compile "org.codehaus.groovy:groovy-all:$groovyVersion"
   }
 }
