@@ -7,6 +7,7 @@ Small example projects, with multiple implementations in JVM-based languages:
 * [Kotlin](https://kotlinlang.org/)
 * [Scala](http://scala-lang.org/)
 * [Xtend](http://xtend-lang.org/)
+* [Clojure](https://clojure.org/)
 
 The project ideas are listed in the [wiki](https://github.com/szarnyasg/jvm-languages/wiki).
 
