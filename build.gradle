@@ -7,9 +7,6 @@ buildscript {
   }
 }
 
-plugins {
-  id "org.xtext.xtend" version "1.0.0"
-}
 apply plugin: "kotlin"
 
 repositories {
@@ -26,11 +23,6 @@ ext {
   groovyVersion = '2.4.7'
   kotlinVersion = '1.0.3'
   scalaVersion = '2.11.8'
-  xtendVersion = '2.10.0'
-}
-
-dependencies {
-  compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
 }
 
 subprojects {
@@ -88,13 +80,5 @@ configure(subprojects.findAll {it.name.endsWith("-scala")}) {
 
   dependencies {
     compile "org.scala-lang:scala-library:$scalaVersion"
-  }
-}
-
-configure(subprojects.findAll {it.name.endsWith("-xtend")}) {
-  apply plugin: "org.xtext.xtend"
-
-  dependencies {
-    compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
   }
 }
