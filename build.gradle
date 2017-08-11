@@ -1,16 +1,18 @@
 buildscript {
   repositories {
-    jcenter()
+    mavenCentral()
   }
   dependencies {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.0"
   }
 }
 
-apply plugin: "kotlin"
+plugins {
+  id "nebula.clojure" version "4.3.0"
+}
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 allprojects {
@@ -19,6 +21,7 @@ allprojects {
 }
 
 ext {
+  clojureVersion = '1.8.0'
   junitVersion = '4.12'
   groovyVersion = '2.4.7'
   kotlinVersion = '1.0.3'
@@ -42,6 +45,24 @@ subprojects {
     repositories {
       jcenter()
     }
+  }
+}
+
+configure(subprojects.findAll {it.name.endsWith("-clojure")}) {
+  repositories {
+    maven { url 'http://clojars.org/repo' }
+  }
+
+  apply plugin: "nebula.clojure"
+
+  dependencies {
+    compile "org.clojure:clojure:$clojureVersion"
+    compile 'org.clojure:algo.generic:0.1.2'
+    testCompile 'org.clojure:test.check:0.9.0'
+  }
+
+  test {
+    clojureTest
   }
 }
 
